@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+<ul id="links">
+	{{#eachPartial "**/*.md"}}
+		{{#if category}}		
+    {{else}}
+      <li><a href="#{{partialName}}">{{title}}</a></li>
+		{{/if}}
+	{{/eachPartial}}
+  
+	{{#each partialData.category}}
+		<li>
+			<h4>{{this.value}}</h4>
+			<ul>
+				{{#each partials}}
+					{{#mdpartial this}}
+						<li class="{{type}}"><a href="#{{partialName}}">{{title}}</a></li>
+					{{/mdpartial}}
+				{{/each}}
+			</ul>
+		</li>
+	{{/each}}
+</ul>

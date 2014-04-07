@@ -1,0 +1,41 @@
+{
+  "name": "carte-assemble",
+  "description": "Carte + Assemble - pretty documentation",
+  "version": "0.1.0",
+  "homepage": "https://github.com/albogdano/carte-assemble",
+  "author": {
+    "name": "Alex Bogdanovski",
+    "url": "https://github.com/albogdano"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/albogdano/carte-assemble.git"
+  },
+  "bugs": {
+    "url": "https://github.com/albogdano/carte-assemble/issues"
+  },
+  "main": "./Gruntfile.js",
+  "devDependencies": {
+    "assemble": ">=0.4.37",
+    "grunt": ">=0.4.4",
+    "grunt-contrib-clean": ">=0.5.0",
+    "grunt-contrib-copy": ">=0.5.0",
+    "lodash": "^2.4.1",
+    "gray-matter": "^0.3.4",
+    "marked": "^0.3.2",
+    "minimatch": "^0.2.14",
+    "handlebars-helper-mdpartial": "*",
+    "assemble-partial-data": "*"
+  },
+  "keywords": [
+    "assemble",
+    "docs",
+    "carte",
+    "assemble docs",
+    "markdown",
+    "handlebars",
+    "yaml",
+    "md",
+    "documentation"
+  ]
+}

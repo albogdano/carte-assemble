@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<head>
+  <title>Assemble Carte</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content="Documentation website"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>
+  <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>  
+  
+<nav id='sidebar'>
+	<h1>Assemble Carte</h1>
+<ul id="links">
+	
+				
+    
+	
+				
+    
+	
+				
+    
+	
+				
+    
+	
+		
+      <li><a href="#2012-12-28-authentication">Authenticate</a></li>
+		
+	
+		
+      <li><a href="#2012-12-28-response-status-codes">Response status codes</a></li>
+		
+	
+  
+	
+		<li>
+			<h4>Stuff</h4>
+			<ul>
+				
+					
+						<li class="DELETE"><a href="#2012-12-24-delete-a-thing">Delete a thing</a></li>
+					
+				
+					
+						<li class="PUT"><a href="#2012-12-25-put-a-thing">Update a thing</a></li>
+					
+				
+					
+						<li class="POST"><a href="#2012-12-26-post-a-thing">Post a thing</a></li>
+					
+				
+					
+						<li class="GET"><a href="#2012-12-27-get-stuff">Get stuff</a></li>
+					
+				
+			</ul>
+		</li>
+	
+</ul>
+</nav>
+
+<section id='content'>
+  
+  	
+  	<article class="DELETE">
+  		<a id="2012-12-24-delete-a-thing" href="#2012-12-24-delete-a-thing">
+  			<h2>
+  				
+  				<code><b>DELETE</b> /stuff/:id</code>
+  				
+  				Delete a thing
+  			</h2>
+  		</a>
+  		<section class="body">
+  			<p>This method allows the user to post a new thing to his stuff.</p>
+<h3 id="request">Request</h3>
+<ul>
+<li><strong><code>:id</code></strong> is the id the thing to delete.</li>
+<li>The headers must include a <strong>valid authentication token</strong>.</li>
+<li><strong>The body is omitted</strong>.</li>
+</ul>
+<h3 id="response">Response</h3>
+<p>Sends back a collection of things.</p>
+<p><code>Status: 200 Deleted</code></p>
+<pre><code>{
+    code: 200,
+    message: &#39;Your thing (id: 736) was deleted&#39;
+}
+</code></pre><p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
+  		</section>
+  	</article>
+  	
+  
+  	
+  	<article class="PUT">
+  		<a id="2012-12-25-put-a-thing" href="#2012-12-25-put-a-thing">
+  			<h2>
+  				
+  				<code><b>PUT</b> /stuff/:id</code>
+  				
+  				Update a thing
+  			</h2>
+  		</a>
+  		<section class="body">
+  			<p>This method allows the user to retrieve his stuff.</p>
+<h3 id="request">Request</h3>
+<ul>
+<li><strong><code>:id</code></strong> is the id the thing to update.</li>
+<li>The headers must include a <strong>valid authentication token</strong>.</li>
+<li><strong>The body can&#39;t be empty</strong> and must include at least the name attribute, a <code>string</code> that will be used as the name of the thing.</li>
+</ul>
+<p><code>Authentication: bearer f862f658-ad89-4fcb-995b-7a4c50554ff6</code></p>
+<pre><code>{
+    name: &#39;My new thing&#39;
+}
+</code></pre><h3 id="response">Response</h3>
+<p>Sends back a collection of things.</p>
+<p><code>Status: 200 OK</code></p>
+<pre><code>{
+    {
+        id: thing_1,
+        name: &#39;My first thing&#39;
+    },
+    {
+        id: thing_2,
+        name: &#39;My second thing&#39;
+    }
+}
+</code></pre><p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
+  		</section>
+  	</article>
+  	
+  
+  	
+  	<article class="POST">
+  		<a id="2012-12-26-post-a-thing" href="#2012-12-26-post-a-thing">
+  			<h2>
+  				
+  				<code><b>POST</b> /stuff</code>
+  				
+  				Post a thing
+  			</h2>
+  		</a>
+  		<section class="body">
+  			<p>This method allows users to create a new thing.</p>
+<h3 id="request">Request</h3>
+<ul>
+<li>The headers must include a <strong>valid authentication token</strong>.</li>
+<li><strong>The body can&#39;t be empty</strong> and must include at least the name attribute, a <code>string</code> that will be used as the name of the thing.</li>
+</ul>
+<p><code>Authentication: bearer TOKEN</code></p>
+<pre><code>{
+    name: &#39;My new thing&#39;
+}
+</code></pre><h3 id="response">Response</h3>
+<p><strong>If succeeds</strong>, returns the created thing.</p>
+<p><code>Status: 201 Created</code></p>
+<pre><code>{
+    id: new_thing,
+    name: &#39;My new thing&#39;
+}
+</code></pre><p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
+  		</section>
+  	</article>
+  	
+  
+  	
+  	<article class="GET">
+  		<a id="2012-12-27-get-stuff" href="#2012-12-27-get-stuff">
+  			<h2>
+  				
+  				<code><b>GET</b> /stuff</code>
+  				
+  				Get stuff
+  			</h2>
+  		</a>
+  		<section class="body">
+  			<p>This method allows users to retrieve stuff.</p>
+<h3 id="request">Request</h3>
+<ul>
+<li>The headers must include a <strong>valid authentication token</strong>.</li>
+</ul>
+<h3 id="response">Response</h3>
+<p>Sends back a collection of things.</p>
+<p><code>Status: 200 OK</code></p>
+<pre><code>{
+    {
+        id: thing_1,
+        name: &#39;My first thing&#39;
+    },
+    {
+        id: thing_2,
+        name: &#39;My second thing&#39;
+    }
+}
+</code></pre><p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
+  		</section>
+  	</article>
+  	
+  
+  	
+  	<article class="">
+  		<a id="2012-12-28-authentication" href="#2012-12-28-authentication">
+  			<h2>
+  				
+  				Authenticate
+  			</h2>
+  		</a>
+  		<section class="body">
+  			<p>This method allows users to retrieve stuff.</p>
+<h3 id="response">Response</h3>
+<p>Sends back a collection of things.</p>
+<p><code>Authentication: bearer TOKEN</code></p>
+<pre><code>{
+    id: thing_2,
+    name: &#39;My second thing&#39;
+}
+</code></pre><p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
+  		</section>
+  	</article>
+  	
+  
+  	
+  	<article class="">
+  		<a id="2012-12-28-response-status-codes" href="#2012-12-28-response-status-codes">
+  			<h2>
+  				
+  				Response status codes
+  			</h2>
+  		</a>
+  		<section class="body">
+  			<h3 id="success">Success</h3>
+<p>Successes differ from errors in that their body may not be a simple response object with a code and a message. The headers however are consistent across all calls:</p>
+<ul>
+<li><code>GET</code>, <code>PUT</code>, <code>DELETE</code> returns <code>200 OK</code> on success,</li>
+<li><code>POST</code> returns 201 on success,</li>
+</ul>
+<p>When <a href="#get-stuff">retrieving stuff</a> for example:</p>
+<p><code>Status: 200 OK</code></p>
+<pre><code>{
+    {
+        id: thing_1,
+        name: &#39;My first thing&#39;
+    },
+    {
+        id: thing_2,
+        name: &#39;My second thing&#39;
+    }
+}
+</code></pre><h3 id="error">Error</h3>
+<p>Error responses are simply returning <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">standard HTTP error codes</a> along with some additional information:</p>
+<ul>
+<li>The error code is sent back as a status header,</li>
+<li>The body includes an object describing both the code and message (for debugging and/or display purposes),</li>
+</ul>
+<p>For a call with an invalid authentication token for example:</p>
+<p><code>Status: 401 Access denied</code></p>
+<pre><code>{
+    code: 401,
+    message: &#39;Access denied: invalid authentication token.&#39;
+}
+</code></pre>
+  		</section>
+  	</article>
+  	
+  
+</section>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="scripts.js" type="text/javascript"></script>
+</body>
+</html>

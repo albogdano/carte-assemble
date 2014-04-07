@@ -1,0 +1,26 @@
+---
+title: Assemble Carte
+---
+<nav id='sidebar'>
+	{{>nav}}
+</nav>
+
+<section id='content'>
+  {{#eachPartial "**/*.md"}}
+  	{{#mdpartial partialName}}
+  	<article class="{{type}}">
+  		<a id="{{partialName}}" href="#{{partialName}}">
+  			<h2>
+  				{{#if type}}
+  				<code><b>{{type}}</b> {{path}}</code>
+  				{{/if}}
+  				{{title}}
+  			</h2>
+  		</a>
+  		<section class="body">
+  			{{this.content}}
+  		</section>
+  	</article>
+  	{{/mdpartial}}
+  {{/eachPartial}}
+</section>

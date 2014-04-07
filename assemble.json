@@ -1,0 +1,11 @@
+{
+	"dest": "site",
+	"templates": "src",
+	"plugins": "<%= site.templates %>/plugins",
+	"helpers": "<%= site.templates %>/helpers",
+	"partials": "<%= site.templates %>/includes",
+	"layouts": "<%= site.templates %>/layouts",
+	"layout": "default.html",
+	"data": "<%= site.templates %>/data/*.{json,yml}",
+  "theme": "flatly"
+}
