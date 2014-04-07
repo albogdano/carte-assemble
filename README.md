@@ -2,6 +2,8 @@
 
 > A fork of [Carte](https://github.com/devo-ps/carte) based on [Assemble](https://github.com/assemble/assemble) instead of Jekyll.
 
+**Check out the [DEMO](http://albogdano.github.io/carte-assemble).**
+
 **Carte** is a simple Jekyll (Assemble in this case) based documentation website for APIs. It is designed as a boilerplate to build your own documentation and is heavily inspired from [Swagger](http://swagger.wordnik.com/) and [I/O docs](http://www.mashery.com/product/io-docs).
 
 We built **Carte** because the existing options (Swagger and the likes) were trying to do too much and did not match our needs:
@@ -11,6 +13,10 @@ We built **Carte** because the existing options (Swagger and the likes) were try
 1. Overall, setting up a separate server for what really requires a good static documentation seemed overkill.
 
 The real value of **Carte** is its structure for describing APIs, not its underlying technical stack (or lack-thereof). In a nutshell; **we built a static template for your API documentation, feel free to re-use it**.
+
+## Demo
+
+[Here it is](http://albogdano.github.io/carte-assemble). No need for web servers - it's all static. 
 
 ## Install
 
