@@ -56,7 +56,7 @@ module.exports = function(grunt) {
   // Load npm plugins to provide necessary tasks.
   grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks("grunt-contrib-copy");
-  grunt.loadNpmTasks("assemble");
+  grunt.loadNpmTasks("grunt-assemble");
 
   grunt.registerTask("default", ["clean","copy:content", "assemble"]);
 };
