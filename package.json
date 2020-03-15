@@ -27,6 +27,7 @@
     "lodash": "^4.17.15",
     "marked": "^0.7.0",
     "minimatch": "^3.0.2",
+    "minimist": ">=1.2.2",
     "set-value": ">=2.0.1"
   },
   "keywords": [
